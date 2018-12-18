@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="bookappjava.main" target="1.8" />
+      <module name="bookappjava.test" target="1.8" />
+      <module name="com.bookapp.java.bookappjava.main" target="1.8" />
+      <module name="com.bookapp.java.bookappjava.test" target="1.8" />
+      <module name="com.example.bookappjava.main" target="1.8" />
+      <module name="com.example.bookappjava.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
