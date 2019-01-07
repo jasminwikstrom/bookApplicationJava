@@ -7,6 +7,7 @@ import se.jasmin.bookapp.model.BookDto;
 import se.jasmin.bookapp.modelEntity.Book;
 import se.jasmin.bookapp.repository.AuthorRepository;
 import se.jasmin.bookapp.repository.BookRepository;
+import se.jasmin.bookapp.repository.CategoryRepository;
 
 import java.util.List;
 
@@ -19,6 +20,9 @@ public class BookServiceImpl implements BookService {
 
     @Autowired
     private AuthorRepository authorRepository;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
 
 
     @Override
@@ -33,13 +37,6 @@ public class BookServiceImpl implements BookService {
             throw new RuntimeException("Author can not be null");
         }
 
-        if (bookDto.getDescription() == null) {
-            throw new RuntimeException("You didn't add a decription");
-        }
-
-        if (bookDto.getYear() == null) {
-            throw new RuntimeException("Add a release year");
-        }
 
         var author = authorRepository.findById(Long.valueOf(bookDto.getAuthorId()));
 
@@ -47,11 +44,23 @@ public class BookServiceImpl implements BookService {
             throw new RuntimeException("Author does not exist");
         }
 
+        if (bookDto.getCategoryId() == null) {
+            throw new RuntimeException("Category can not be null");
+        }
+        var category = categoryRepository.findById(Long.valueOf(bookDto.getCategoryId()));
+
+        if (category.isEmpty()){
+            throw new RuntimeException("Category does not exist");
+
+        }
+
         var book = new Book();
         book.setTitle(bookDto.getTitle());
         book.setAuthor(author.get());
+        book.setCategory(category.get());
         book.setDescription(bookDto.getDescription());
         book.setYear(bookDto.getYear());
+
 
         return bookRepository.save(book);
     }
@@ -62,6 +71,7 @@ public class BookServiceImpl implements BookService {
         List<Book> books = bookRepository.findByQuery(title, author);
 
         return books;
+
     }
 
 
@@ -70,9 +80,18 @@ public class BookServiceImpl implements BookService {
         foundBook.setDescription(bookDto.getDescription());
 
 
+
         return bookRepository.save(foundBook);
     }
 
+
+
+    @Override
+    public void deleteBookById(Long id) {
+        bookRepository.findById(id).ifPresent(bookRepository::delete);
+
+
+    }
 
 }
 

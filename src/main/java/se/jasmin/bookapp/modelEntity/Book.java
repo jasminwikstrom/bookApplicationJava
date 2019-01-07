@@ -18,15 +18,17 @@ public class Book {
     @JoinColumn(name = "AUTHOR_ID")
     private Author author;
 
+    @ManyToOne
+    @JoinColumn(name = "CATEGORY_ID")
+    private Category category;
+
     @Column(name = "DESCRIPTION")
     private String description;
 
     @Column(name = "YEAR")
     private String year;
 
-    @ManyToOne
-    @JoinColumn(name = "CATEGORY_ID")
-    private Category category;
+
 
     public Long getId() {
         return id;
