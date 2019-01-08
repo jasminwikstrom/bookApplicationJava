@@ -12,11 +12,11 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, Long> {
 
     @Query(value =
-           "SELECT b FROM Book b " +
-           "JOIN b.author a " +
-           "JOIN b.category c " +
-           "WHERE (:title IS NULL OR b.title = :title) " +
-           "AND (:author IS NULL OR a.name = :author)")
+            "SELECT b FROM Book b " +
+                    "JOIN b.author a " +
+                    "JOIN b.category c " +
+                    "WHERE (:title IS NULL OR b.title = :title) " +
+                    "AND (:author IS NULL OR a.name = :author)")
     List<Book> findByQuery(
             @Param("title") String title,
             @Param("author") String author);

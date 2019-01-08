@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.jasmin.bookapp.api.dto.CreateNewBookDto;
 import se.jasmin.bookapp.api.dto.UpdateBookDto;
-import se.jasmin.bookapp.repository.entity.Book;
 import se.jasmin.bookapp.repository.AuthorRepository;
 import se.jasmin.bookapp.repository.BookRepository;
 import se.jasmin.bookapp.repository.CategoryRepository;
+import se.jasmin.bookapp.repository.entity.Book;
 
 import java.util.List;
 import java.util.Optional;
