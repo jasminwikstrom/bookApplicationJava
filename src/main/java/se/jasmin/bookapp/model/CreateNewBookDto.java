@@ -1,26 +1,23 @@
 package se.jasmin.bookapp.model;
 
-public class BookDto {
+public class CreateNewBookDto {
 
     private String title;
- private String authorId;
+    private String authorId;
     private String categoryId;
     private String description;
     private String year;
 
-    public BookDto() {
+    public CreateNewBookDto() {
     }
 
-    public BookDto(String title, String authorId, String categoryId, String description, String year) {
+    public CreateNewBookDto(String title, String authorId, String categoryId, String description, String year) {
         this.title = title;
         this.authorId = authorId;
         this.categoryId = categoryId;
         this.description = description;
         this.year = year;
     }
-
-
-
 
     public String getTitle() {
         return title;
@@ -62,12 +59,9 @@ public class BookDto {
         this.year = year;
     }
 
-
-
-
     @Override
     public String toString() {
-        return "BookDto{" +
+        return "CreateNewBookDto{" +
                 "title='" + title + '\'' +
                 ", authorId='" + authorId + '\'' +
                 ", categoryId='" + categoryId + '\'' +

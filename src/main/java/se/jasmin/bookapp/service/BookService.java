@@ -1,20 +1,21 @@
 package se.jasmin.bookapp.service;
 
-import se.jasmin.bookapp.model.BookDto;
+import se.jasmin.bookapp.model.CreateNewBookDto;
+import se.jasmin.bookapp.model.UpdateBookDto;
 import se.jasmin.bookapp.modelEntity.Book;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public interface BookService {
-    Book saveBook(BookDto book);
+    Book saveBook(CreateNewBookDto createNewBookDto);
 
     List<Book> getBooks(String title, String author);
 
-    Book updateBook(Long id, BookDto bookDto);
+    Optional<Book> updateBook(String id, UpdateBookDto updateBookDto);
 
-
-    void deleteBookById (Long id);
+    Optional<String> deleteBookById(Long id);
 }
 
 
