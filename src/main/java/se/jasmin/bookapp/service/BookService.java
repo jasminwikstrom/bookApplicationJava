@@ -1,8 +1,8 @@
 package se.jasmin.bookapp.service;
 
-import se.jasmin.bookapp.model.CreateNewBookDto;
-import se.jasmin.bookapp.model.UpdateBookDto;
-import se.jasmin.bookapp.modelEntity.Book;
+import se.jasmin.bookapp.api.dto.CreateNewBookDto;
+import se.jasmin.bookapp.api.dto.UpdateBookDto;
+import se.jasmin.bookapp.repository.entity.Book;
 
 import java.util.List;
 import java.util.Optional;

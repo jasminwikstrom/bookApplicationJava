@@ -1,7 +1,7 @@
 package se.jasmin.bookapp.service;
 
-import se.jasmin.bookapp.model.AuthorDto;
-import se.jasmin.bookapp.modelEntity.Author;
+import se.jasmin.bookapp.api.dto.AuthorDto;
+import se.jasmin.bookapp.repository.entity.Author;
 
 
 public interface AuthorService {

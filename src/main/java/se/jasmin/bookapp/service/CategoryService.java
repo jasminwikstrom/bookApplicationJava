@@ -1,7 +1,7 @@
 package se.jasmin.bookapp.service;
 
-import se.jasmin.bookapp.model.CategoryDto;
-import se.jasmin.bookapp.modelEntity.Category;
+import se.jasmin.bookapp.api.dto.CategoryDto;
+import se.jasmin.bookapp.repository.entity.Category;
 
 public interface CategoryService {
 

@@ -2,9 +2,9 @@ package se.jasmin.bookapp.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import se.jasmin.bookapp.model.CreateNewBookDto;
-import se.jasmin.bookapp.model.UpdateBookDto;
-import se.jasmin.bookapp.modelEntity.Book;
+import se.jasmin.bookapp.api.dto.CreateNewBookDto;
+import se.jasmin.bookapp.api.dto.UpdateBookDto;
+import se.jasmin.bookapp.repository.entity.Book;
 import se.jasmin.bookapp.repository.AuthorRepository;
 import se.jasmin.bookapp.repository.BookRepository;
 import se.jasmin.bookapp.repository.CategoryRepository;
